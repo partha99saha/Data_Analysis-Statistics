@@ -21,7 +21,7 @@ print("Standard Deviation:", std_dev)
 print("Correlation Matrix:")
 print(correlation_matrix)
 
-# Hypothesis testing 
+# Hypothesis testing
 # (example: testing if the mean of the data is equal to a specific value)
 # Let's assume null hypothesis H0: mean = 50
 # We will use a significance level of 0.05
@@ -37,7 +37,7 @@ if p_value < 0.05:
 else:
     print("Fail to reject null hypothesis (H0) at 0.05 significance level.")
 
-# Confidence interval estimation 
+# Confidence interval estimation
 # (example: estimating confidence interval for the mean of the data)
 confidence_level = 0.95
 n = len(data)
