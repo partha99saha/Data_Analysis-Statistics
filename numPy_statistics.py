@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
 
 
 # Generate a sample dataset (random data)
@@ -54,3 +55,31 @@ print("\nConfidence Interval Estimation:")
 print("Confidence Level:", confidence_level)
 print("Margin of Error:", margin_of_error)
 print("Confidence Interval: [{:.2f}, {:.2f}]".format(lower_bound, upper_bound))
+
+# ----------------- Visualization -----------------
+plt.figure(figsize=(10, 6))
+
+# Histogram
+plt.hist(data, bins=15, color="skyblue", edgecolor="black", alpha=0.7)
+plt.axvline(mean, color="red", linestyle="--", label=f"Mean = {mean:.2f}")
+plt.axvline(
+    lower_bound, color="green", linestyle="--", label=f"CI Lower = {lower_bound:.2f}"
+)
+plt.axvline(
+    upper_bound, color="green", linestyle="--", label=f"CI Upper = {upper_bound:.2f}"
+)
+
+plt.title("Histogram of Sample Data with Mean and 95% Confidence Interval")
+plt.xlabel("Data Values")
+plt.ylabel("Frequency")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Boxplot
+plt.figure(figsize=(6, 4))
+plt.boxplot(data, vert=True, patch_artist=True, boxprops=dict(facecolor="skyblue"))
+plt.title("Boxplot of Sample Data")
+plt.ylabel("Values")
+plt.grid(True)
+plt.show()
