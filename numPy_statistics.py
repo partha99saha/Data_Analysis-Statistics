@@ -42,9 +42,11 @@ else:
 confidence_level = 0.95
 n = len(data)
 standard_error = np.std(data) / np.sqrt(n)
-margin_of_error = standard_error * \
-    np.abs(np.percentile(np.random.normal(loc=0, scale=1,
-           size=10000), (1 - confidence_level) * 100))
+margin_of_error = standard_error * np.abs(
+    np.percentile(
+        np.random.normal(loc=0, scale=1, size=10000), (1 - confidence_level) * 100
+    )
+)
 lower_bound = mean - margin_of_error
 upper_bound = mean + margin_of_error
 
